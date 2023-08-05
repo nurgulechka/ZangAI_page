@@ -175,12 +175,4 @@ def main():
 
 
 if __name__ == "__main__":
-    if "is_first_time" not in st.session_state:
-        st.session_state["is_first_time"] = True
-    try:
-        main()
-    except Exception as ex:
-        raise ex
-    finally:
-        if st.session_state["is_first_time"]:
-            st.session_state["is_first_time"] = False
+    main()
