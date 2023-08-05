@@ -149,11 +149,11 @@ def main():
         # selected_page = st.sidebar.selectbox(
         #         "Select a page", page_names_to_funcs.keys(), key="page"
         #     )
-        # option_selected = st.sidebar.selectbox(
-        #     "Pick option", options, index=options.index(query_option)
-        # )
-        if selected_page:
-            st.experimental_set_query_params(option=selected_page)
+        option_selected = st.sidebar.selectbox(
+            "Pick option", options, index=options.index(query_option)
+        )
+        if option_selected:
+            st.experimental_set_query_params(option=option_selected)
     except:  # catch exception and set query param to predefined value
         options = ["Privacy Policy", "Terms & Conditions", "Contact & Support"]
         st.experimental_set_query_params(option=options[1])  # defaults to dog
@@ -161,11 +161,11 @@ def main():
         # query_params = st.experimental_get_query_params()
         # query_option = query_params["option"][0]
 
-        # option_selected = st.sidebar.selectbox(
-        #     "Pick option", options, index=options.index(query_option)
-        # )
-        if selected_page:
-            st.experimental_set_query_params(option=selected_page)
+        option_selected = st.sidebar.selectbox(
+            "Pick option", options, index=options.index(query_option)
+        )
+        if option_selected:
+            st.experimental_set_query_params(option=option_selected)
     # if selected_page == "Privacy Policy":
     #     privacy_policy()
     # elif selected_page == "Terms & Conditions":
