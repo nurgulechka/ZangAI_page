@@ -150,7 +150,7 @@ def main():
         #         "Select a page", page_names_to_funcs.keys(), key="page"
         #     )
         option_selected = st.sidebar.selectbox(
-            "Pick option", options, index=options.index(query_option)
+            "Pick option", options, index=page_names_to_funcs.index(query_option)
         )
         if option_selected:
             st.experimental_set_query_params(option=option_selected)
@@ -162,7 +162,7 @@ def main():
         # query_option = query_params["option"][0]
 
         option_selected = st.sidebar.selectbox(
-            "Pick option", options, index=options.index(query_option)
+            "Pick option", options, index=page_names_to_funcs.index(query_option)
         )
         if option_selected:
             st.experimental_set_query_params(option=option_selected)
