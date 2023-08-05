@@ -136,42 +136,17 @@ page_names_to_funcs = {
 
 def main():
     st.sidebar.title("Navigation")
-    page_options = ["Privacy Policy", "Terms & Conditions", "Contact & Support"]
+    # page_options = ["Privacy Policy", "Terms & Conditions", "Contact & Support"]
     selected_page = st.sidebar.selectbox(
         "Select a page", page_names_to_funcs.keys(), key="page"
     )
     page_names_to_funcs[selected_page]()
-    # try:
-    #     options = ["Privacy Policy", "Terms & Conditions", "Contact & Support"]
-
-    #     query_params = st.experimental_get_query_params()
-    #     query_option = query_params["option"][0]
-    #     # selected_page = st.sidebar.selectbox(
-    #     #         "Select a page", page_names_to_funcs.keys(), key="page"
-    #     #     )
-    #     option_selected = st.sidebar.selectbox(
-    #         "Pick option", options, index=page_names_to_funcs.get(query_option)
-    #     )
-    #     if option_selected:
-    #         st.experimental_set_query_params(option=option_selected)
-    # except:  # catch exception and set query param to predefined value
-    #     options = ["Privacy Policy", "Terms & Conditions", "Contact & Support"]
-    #     st.experimental_set_query_params(option=options[1])  # defaults to dog
-
-    #     # query_params = st.experimental_get_query_params()
-    #     query_option = query_params["option"][0]
-
-    #     option_selected = st.sidebar.selectbox(
-    #         "Pick option", options, index=page_names_to_funcs.get(query_option)
-    #     )
-    #     if option_selected:
-    #         st.experimental_set_query_params(option=option_selected)
-    if selected_page == "Privacy Policy":
-        privacy_policy()
-    elif selected_page == "Terms & Conditions":
-        terms_conditions()
-    elif selected_page == "Contact & Support":
-        contact_page()
+    # if selected_page == "Privacy Policy":
+    #     privacy_policy()
+    # elif selected_page == "Terms & Conditions":
+    #     terms_conditions()
+    # elif selected_page == "Contact & Support":
+    #     contact_page()
 
 
 if __name__ == "__main__":
