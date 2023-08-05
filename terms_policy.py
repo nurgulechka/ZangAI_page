@@ -166,12 +166,12 @@ def main():
         # )
         if selected_page:
             st.experimental_set_query_params(option=selected_page)
-    if selected_page == "Privacy Policy":
-        privacy_policy()
-    elif selected_page == "Terms & Conditions":
-        terms_conditions()
-    elif selected_page == "Contact & Support":
-        contact_page()
+    # if selected_page == "Privacy Policy":
+    #     privacy_policy()
+    # elif selected_page == "Terms & Conditions":
+    #     terms_conditions()
+    # elif selected_page == "Contact & Support":
+    #     contact_page()
 
 
 if __name__ == "__main__":
