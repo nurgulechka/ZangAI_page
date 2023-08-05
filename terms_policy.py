@@ -127,18 +127,35 @@ def contact_page():
     st.write("These terms and conditions are effective as of 2023-08-05")
 
 
+page_names_to_funcs = {
+    "Privacy Policy": privacy_policy,
+    "Terms & Conditions": terms_conditions,
+    "Contact & Support": contact_page,
+}
+
+
 def main():
     st.sidebar.title("Navigation")
     page_options = ["Privacy Policy", "Terms & Conditions", "Contact & Support"]
-    selected_page = st.sidebar.radio("Select a page", page_options)
-
-    if selected_page == "Privacy Policy":
-        privacy_policy()
-    elif selected_page == "Terms & Conditions":
-        terms_conditions()
-    elif selected_page == "Contact & Support":
-        contact_page()
+    selected_page = st.sidebar.selectbox(
+        "Select a page", page_names_to_funcs.keys(), key="page"
+    )
+    page_names_to_funcs[selected_page]()
+    # if selected_page == "Privacy Policy":
+    #     privacy_policy()
+    # elif selected_page == "Terms & Conditions":
+    #     terms_conditions()
+    # elif selected_page == "Contact & Support":
+    #     contact_page()
 
 
 if __name__ == "__main__":
-    main()
+    if "is_first_time" not in st.session_state:
+        st.session_state["is_first_time"] = True
+    try:
+        main()
+    except Exception as ex:
+        raise ex
+    finally:
+        if st.session_state["is_first_time"]:
+            st.session_state["is_first_time"] = False
